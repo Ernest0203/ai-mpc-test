@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
@@ -17,7 +18,7 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-mongoose.connect('mongodb+srv://admin:admin@cluster0.iqt9nt4.mongodb.net/?appName=Cluster0')
+mongoose.connect(process.env.MONGODB_URI)
 
 app.get('/companies', async (req, res) => {
   try {
