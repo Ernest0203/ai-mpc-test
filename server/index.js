@@ -18,7 +18,7 @@ const validateObjectId = (req, res, next) => {
 
 const allowedOrigins = [
   'http://localhost:3000',
-  'd1m94fxbbwq7j5.cloudfront.net'
+  'https://d1m94fxbbwq7j5.cloudfront.net'
 ];
 
 const app = express()
