@@ -5,6 +5,8 @@ const cors = require('cors')
 const companyRepository = require('./repositories/companyRepository')
 const { validateCreateCompany } = require('./dto/companyDto')
 
+mongoose.connect(process.env.MONGODB_URI)
+
 // Middleware для валидации ObjectId
 const validateObjectId = (req, res, next) => {
   const { id } = req.params
@@ -31,8 +33,6 @@ app.use(cors({
   credentials: true
 }))
 app.use(express.json())
-
-mongoose.connect(process.env.MONGODB_URI)
 
 app.get('/companies', async (req, res) => {
   try {
