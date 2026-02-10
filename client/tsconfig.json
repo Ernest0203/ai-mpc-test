@@ -9,8 +9,8 @@
     // See also https://aka.ms/tsconfig/module
     "module": "esnext",
     "target": "es2017",
-    "lib": ["dom", "dom.iterable", "es6"],
-    "types": ["react", "react-dom"],
+    "lib": ["dom", "dom.iterable", "esnext", "node"],
+    "types": ["react", "react-dom", "node"],
     // For nodejs:
     // "lib": ["esnext"],
     // "types": ["node"],
