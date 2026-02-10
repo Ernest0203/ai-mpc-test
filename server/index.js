@@ -6,6 +6,8 @@ const companyRepository = require('./repositories/companyRepository')
 const { validateCreateCompany } = require('./dto/companyDto')
 
 mongoose.connect(process.env.MONGODB_URI)
+  .then(() => console.log('✅ MongoDB connected successfully'))
+  .catch(err => console.error('❌ MongoDB connection error:', err))
 
 // Middleware для валидации ObjectId
 const validateObjectId = (req, res, next) => {
